@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor list</title>
+</head>
+<body>
+    <h1>Blood Donors</h1>
+    
+        <h3>{% for donor in donors %}</h3>
+          <p>  {{ donor.name }} </p>
+          <p>  {{ donor.email }} </p>
+          <p>  {{ donor.phone }} </p>
+          <p>  {{ donor.blood_group }} </p>
+          <p>  {{ donor.address }} </p>
+        {% endfor %}
+    
+</body>
+</html>
