@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Patient</title>
+</head>
+<body>
+
+<h2>Add Patient</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    Patient ID:
+    <input type="text" name="patient_id"><br><br>
+
+    Name:
+    <input type="text" name="patient_name"><br><br>
+
+    Age:
+    <input type="number" name="age"><br><br>
+
+    Gender:
+    <select name="gender">
+        <option>Male</option>
+        <option>Female</option>
+    </select><br><br>
+
+    Blood Group:
+    <input type="text" name="blood_group"><br><br>
+
+    Phone:
+    <input type="text" name="phone"><br><br>
+
+    <button type="submit">Save Patient</button>
+
+</form>
+
+</body>
+</html>
