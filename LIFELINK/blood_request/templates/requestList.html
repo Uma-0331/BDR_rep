@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood_donor</title>
+</head>
+<body>
+    <h1>Blood Requests</h1>
+
+<table border="1">
+    <tr>
+        <th>Patient</th>
+        <th>Blood Group</th>
+        <th>Status</th>
+    </tr>
+
+    {% for request in requests %}
+    <tr>
+        <td>{{ request.patient_name }}</td>
+        <td>{{ request.blood_group }}</td>
+        <td>{{ request.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
