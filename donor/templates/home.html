@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor list</title>
+</head>
+<body>
+    <h1>Blood Donors list</h1>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin:auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color:lightgray;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Blood Group</th>
+            <th>Address</th>
+        </tr>
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor.name }}</td>
+            <td>{{ donor.email }}</td>
+            <td>{{ donor.phone }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.address }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
+         
