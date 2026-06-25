@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Admin_module',
     'blood_request',
+    'donor',
+    'patient',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +78,9 @@ WSGI_APPLICATION = 'LIFELINK.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'lifelink',
+        'NAME': 'recipient_patient_db',
         'USER': 'root',
-        'PASSWORD': 'uma@2006',
+        'PASSWORD': '20072014',
         'HOST': 'localhost',
         'PORT': '3306',
     }
