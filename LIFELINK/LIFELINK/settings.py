@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Admin_module',
     'blood_request',
+    'donor',
+    'patient',
 ]
 
 MIDDLEWARE = [

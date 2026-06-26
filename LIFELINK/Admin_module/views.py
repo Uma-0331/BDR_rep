@@ -52,4 +52,5 @@ def deleteAdmin(request, id):
     admin = AdminModule.objects.get(id=id)
     admin.delete()
 
-    return redirect('/adminmodule/adminmodule-list/')
+    return redirect('/adminmodule/adminmodule-list')
+    
