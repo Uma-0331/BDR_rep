@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Patient
 
-
 def home(request):
     patients = Patient.objects.all()
     return render(request, 'patient_list.html', {'patients': patients})

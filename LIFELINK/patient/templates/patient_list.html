@@ -6,8 +6,7 @@
 <body>
 
 <h2>Patient List</h2>
-
-<a href="/add/">Add Patient</a>
+<a href="/patient/add/">Add Patient</a>
 
 <table border="1">
     <tr>
@@ -29,8 +28,10 @@
         <td>{{ patient.blood_group }}</td>
         <td>{{ patient.phone }}</td>
         <td>
-            <a href="/edit/{{ patient.id }}/">Edit</a>
-            <a href="/delete/{{ patient.id }}/">Delete</a>
+            <a href="{% url 'add' %}">Add Patient</a>
+            <a href="/patient/edit/{{ patient.id }}/">Edit</a>
+            <a href="/patient/delete/{{ patient.id }}/">Delete</a>
+          
         </td>
     </tr>
     {% endfor %}
