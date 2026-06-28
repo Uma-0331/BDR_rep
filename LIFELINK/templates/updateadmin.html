@@ -28,6 +28,21 @@
         </div>
 
         <div class="mb-3">
+             <label>Hospital Name</label>
+             <input type="text" name="hospital_name"
+                    value="{{admin.hospital_name}}"
+                    class="form-control" required>
+        </div>
+
+       <div class="mb-3">
+            <label>Department</label>
+            <input type="text" name="department"
+                 value="{{admin.department}}"
+                 class="form-control" required>
+       </div>
+
+
+        <div class="mb-3">
             <label>Email</label>
             <input type="email" name="admin_email"
                    value="{{admin.admin_email}}"
@@ -41,6 +56,23 @@
                    class="form-control" required>
         </div>
 
+        <div class="mb-3">
+            <label>Status</label>
+            <select name="status" class="form-control">
+
+                <option value="Active"
+                {% if admin.status == 'Active' %}selected{% endif %}>
+                Active
+                </option>
+
+               <option value="Inactive"
+               {% if admin.status == 'Inactive' %}selected{% endif %}>
+               Inactive
+               </option>
+
+           </select>
+        </div>
+        
         <button type="submit" class="btn btn-primary">
             Update Admin
         </button>

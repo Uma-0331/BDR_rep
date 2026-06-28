@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'Admin_module',
     'blood_request',
     'donor',
-    'patient',
+
+    
 ]
 
 MIDDLEWARE = [

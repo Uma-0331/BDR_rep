@@ -28,6 +28,16 @@
         </div>
 
         <div class="mb-3">
+            <label class="form-label">Hospital Name</label>
+            <input type="text" name="hospital_name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Department</label>
+            <input type="text" name="department" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
             <label class="form-label">Email</label>
             <input type="email" name="admin_email" class="form-control" required>
         </div>
@@ -36,6 +46,16 @@
             <label class="form-label">Phone</label>
             <input type="text" name="admin_phone" class="form-control" required>
         </div>
+
+        <div class="mb-3">
+             <label class="form-label">Status</label>
+             <select name="status" class="form-control">
+                 <option value="Active">Active</option>
+                 <option value="Inactive">Inactive</option>
+            </select>
+        </div>
+
+        
 
         <button type="submit" class="btn btn-success">
             Save Admin

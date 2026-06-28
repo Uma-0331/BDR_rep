@@ -23,12 +23,13 @@
 
         <thead class="table-dark">
             <tr>
-                <th>ID</th>
-                <th>Admin ID</th>
-                <th>Admin Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th width="180">Action</th>
+               <th>Admin Name</th>
+               <th>Hospital</th>
+              <th>Department</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Status</th>
+             <th width="180">Action</th>
             </tr>
         </thead>
 
@@ -36,11 +37,12 @@
 
             {% for admin in admins %}
             <tr>
-                <td>{{ admin.id }}</td>
-                <td>{{ admin.admin_id }}</td>
-                <td>{{ admin.admin_name }}</td>
-                <td>{{ admin.admin_email }}</td>
-                <td>{{ admin.admin_phone }}</td>
+                 <td>{{ admin.admin_name }}</td>
+                 <td>{{ admin.hospital_name }}</td>
+                 <td>{{ admin.department }}</td>
+                 <td>{{ admin.admin_email }}</td>
+                 <td>{{ admin.admin_phone }}</td>
+                 <td>{{ admin.status }}</td>
 
                 <td>
                     <a href="/adminmodule/editAdmin/{{admin.id}}/"
@@ -58,7 +60,7 @@
 
             {% empty %}
             <tr>
-                <td colspan="6" class="text-center">
+                <td colspan="9" class="text-center">
                     No Admin Records Found
                 </td>
             </tr>
