@@ -21,8 +21,9 @@ from patient import views
 urlpatterns = [
     path('', include('patient.urls')),
     path('admin/', admin.site.urls),
-    path('request/', include('blood_request.urls')),
+    path('', include('blood_request.urls')),
     path('adminmodule/', include('Admin_module.urls')),
     path('patient/', include('patient.urls')),
+    path('donor/', include('donor.urls')),
 ]
 

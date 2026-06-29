@@ -1,39 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/AvailableDonors.css";
+
+import api from "../services/api";
 
 function AvailableDonors() {
   const [bloodGroup, setBloodGroup] = useState("");
 
-  const donors = [
-    {
-      name: "Rahul Sharma",
-      bloodGroup: "O+",
-      city: "Delhi",
-      phone: "9876543210",
-    },
-    {
-      name: "Anjali Verma",
-      bloodGroup: "A+",
-      city: "Mumbai",
-      phone: "9123456780",
-    },
-    {
-      name: "John Mathew",
-      bloodGroup: "B+",
-      city: "Chennai",
-      phone: "9988776655",
-    },
-    {
-      name: "Priya Singh",
-      bloodGroup: "O-",
-      city: "Bangalore",
-      phone: "8877665544",
-    },
-  ];
-
+  const [donors, setDonors] = useState([]);
+  
   const filteredDonors = bloodGroup
-    ? donors.filter((d) => d.bloodGroup === bloodGroup)
+    ? donors.filter((d) => d.blood_group === bloodGroup)
     : donors;
+
+  useEffect(() => {
+    const fetchDonors = async () => {
+      try {
+        const response = await api.get("donor/api/donors/");
+        setDonors(response.data);
+      } catch (error) {
+        console.error("Error fetching donors:", error);
+      }
+    };
+
+    fetchDonors();
+  }, []);
 
   return (
     <div className="donor-page">
@@ -58,12 +48,12 @@ function AvailableDonors() {
       {/* DONOR CARDS */}
       <div className="donor-grid">
 
-        {filteredDonors.map((donor, index) => (
-          <div className="donor-card" key={index}>
+        {filteredDonors.map((donor) => (
+          <div className="donor-card" key={donor.id}>
 
             <h3>{donor.name}</h3>
 
-            <p>🩸 {donor.bloodGroup}</p>
+            <p>🩸 {donor.blood_group}</p>
             <p>📍 {donor.city}</p>
             <p>📞 {donor.phone}</p>
 

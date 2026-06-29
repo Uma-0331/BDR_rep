@@ -1,0 +1,19 @@
+<h2>Blood Request Form</h2>
+
+<form method="POST" action="{% url 'request_blood' %}">
+    {% csrf_token %}
+
+    <label>Patient Name</label><br>
+    <input type="text" name="patient_name" required><br><br>
+
+    <label>Blood Group</label><br>
+    <input type="text" name="blood_group" required><br><br>
+
+    <label>Units Required</label><br>
+    <input type="number" name="units_required" required><br><br>
+
+    <label>City</label><br>
+    <input type="text" name="city" required><br><br>
+
+    <button type="submit">Submit Request</button>
+</form>

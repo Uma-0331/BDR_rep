@@ -1,6 +1,13 @@
-from django.shortcuts import render
+from rest_framework import generics
 from .models import Donor
-def home(request):
-    donors = Donor.objects.all()
-    return render(request, 'home.html', {'donors': donors})
-# Create your views here.
+from .serializers import DonorSerializer
+
+
+class DonorListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Donor.objects.all()
+    serializer_class = DonorSerializer
+
+
+class DonorRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Donor.objects.all()
+    serializer_class = DonorSerializer

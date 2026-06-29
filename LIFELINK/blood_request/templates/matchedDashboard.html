@@ -1,0 +1,45 @@
+<h2>Patient - Compatible Donor Matching Dashboard</h2>
+
+<table border="1" cellpadding="10">
+
+    <tr>
+        <th>Patient Name</th>
+        <th>Blood Group</th>
+        <th>City</th>
+        <th>Units</th>
+        <th>Compatible Donors</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for item in data %}
+
+    <tr>
+        <td>{{ item.patient.patient_name }}</td>
+        <td>{{ item.patient.blood_group }}</td>
+        <td>{{ item.patient.city }}</td>
+        <td>{{ item.patient.units_required }}</td>
+
+        <td>
+            {% for d in item.donors %}
+                <div>
+                    {{ d.name }} - {{ d.blood_group }} - {{ d.city }}
+                </div>
+            {% empty %}
+                No compatible donors
+            {% endfor %}
+        </td>
+
+        <td>
+            <a href="{% url 'approve_request' item.patient.id %}">
+                <button>Approve</button>
+            </a>
+
+            <a href="{% url 'reject_request' item.patient.id %}">
+                <button>Reject</button>
+            </a>
+        </td>
+    </tr>
+
+    {% endfor %}
+
+</table>

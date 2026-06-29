@@ -1,0 +1,30 @@
+<h2>Donor List</h2>
+
+<a href="{% url 'add_donor' %}">Add Donor</a>
+
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Blood Group</th>
+        <th>City</th>
+        <th>Available</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for donor in donors %}
+    <tr>
+        <td>{{ donor.name }}</td>
+        <td>{{ donor.blood_group }}</td>
+        <td>{{ donor.city }}</td>
+        <td>{{ donor.available }}</td>
+        <td>
+            <a href="{% url 'edit_donor' donor.id %}">Edit</a>
+
+            <form action="{% url 'delete_donor' donor.id %}" method="POST" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>

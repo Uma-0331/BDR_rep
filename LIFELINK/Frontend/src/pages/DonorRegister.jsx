@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/DonorRegister.css";
+import api from "../services/api";
 
 function DonorRegister() {
   const [formData, setFormData] = useState({
@@ -22,11 +23,41 @@ function DonorRegister() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Donor Registered Successfully!");
-  };
+
+    try {
+
+        const donorData = {
+            name: formData.name,
+            age: Number(formData.age),
+            gender: formData.gender,
+            blood_group: formData.bloodGroup,
+            phone: formData.phone,
+            email: formData.email,
+            city: formData.city,
+            address: formData.address,
+            last_donation: formData.lastDonation || null,
+            available: formData.available === true,
+        };
+
+        const response = await api.post(
+            "donor/api/donors/",
+            donorData
+        );
+
+        console.log(response.data);
+
+        alert("Donor Registered Successfully!");
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Registration Failed");
+
+    }
+};
 
   return (
     <div className="donor-container">
@@ -49,11 +80,16 @@ function DonorRegister() {
           onChange={handleChange}
         />
 
-        <select name="gender" onChange={handleChange}>
-          <option value="">Gender</option>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </select>
+       <select
+  name="gender"
+  value={formData.gender}
+  onChange={handleChange}
+>
+  <option value="">Select Gender</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+  <option value="Other">Other</option>
+</select>
 
         <select name="bloodGroup" onChange={handleChange}>
           <option value="">Blood Group</option>
@@ -101,12 +137,19 @@ function DonorRegister() {
           onChange={handleChange}
         />
 
-        <select name="available" onChange={handleChange}>
-          <option value="">Availability</option>
-          <option value="yes">Available</option>
-          <option value="no">Not Available</option>
-        </select>
-
+        <select
+    name="available"
+    onChange={(e) =>
+        setFormData({
+            ...formData,
+            available: e.target.value === "true",
+        })
+    }
+>
+    <option value="">Availability</option>
+    <option value="true">Available</option>
+    <option value="false">Not Available</option>
+</select>
         <button type="submit">Register as Donor</button>
 
       </form>

@@ -5,7 +5,7 @@ class AdminModule(models.Model):
     admin_name = models.CharField(max_length=100)
 
     hospital_name = models.CharField(max_length=100)
-    department = models.CharField(max_length=50)
+    department = models.CharField(max_length=100, default="General")
 
     admin_email = models.EmailField()
     admin_phone = models.CharField(max_length=15)

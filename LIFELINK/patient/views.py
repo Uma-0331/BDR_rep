@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect, get_object_or_404
+
+from blood_request.models import BloodRequest
 from .models import Patient
 
 def home(request):
     patients = Patient.objects.all()
     return render(request, 'patient_list.html', {'patients': patients})
 
-
 def add(request):
     if request.method == 'POST':
-        Patient.objects.create(
+
+        # Save Patient
+        patient = Patient.objects.create(
             patient_id=request.POST['patient_id'],
             patient_name=request.POST['patient_name'],
             age=request.POST['age'],
@@ -16,9 +19,19 @@ def add(request):
             blood_group=request.POST['blood_group'],
             phone=request.POST['phone']
         )
+
+        # Create BloodRequest for matching system
+        BloodRequest.objects.create(
+            patient_name=patient.patient_name,
+            blood_group=patient.blood_group,
+            city="Unknown",
+            units_required=1
+        )
+
         return redirect('home')
 
     return render(request, 'add_patient.html')
+
 
 
 def edit(request, id):

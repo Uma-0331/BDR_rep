@@ -1,0 +1,16 @@
+<h2>Edit Donor</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" value="{{ donor.name }}"><br>
+    <input type="text" name="blood_group" value="{{ donor.blood_group }}"><br>
+    <input type="text" name="city" value="{{ donor.city }}"><br>
+
+    <label>
+        <input type="checkbox" name="available" {% if donor.available %}checked{% endif %}>
+        Available
+    </label>
+
+    <button type="submit">Update</button>
+</form>
