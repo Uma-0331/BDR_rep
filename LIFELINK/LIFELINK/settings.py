@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'LIFELINK.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'recipient_patient_db',
+        'NAME': 'lifelink',
         'USER': 'root',
-        'PASSWORD': '20072014',
+        'PASSWORD': 'uma@2006',
         'HOST': 'localhost',
         'PORT': '3306',
     }
