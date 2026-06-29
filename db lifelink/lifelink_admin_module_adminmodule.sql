@@ -28,6 +28,9 @@ CREATE TABLE `admin_module_adminmodule` (
   `admin_name` varchar(100) NOT NULL,
   `admin_email` varchar(254) NOT NULL,
   `admin_phone` varchar(15) NOT NULL,
+  `department` varchar(100) NOT NULL,
+  `hospital_name` varchar(100) NOT NULL,
+  `status` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -38,7 +41,7 @@ CREATE TABLE `admin_module_adminmodule` (
 
 LOCK TABLES `admin_module_adminmodule` WRITE;
 /*!40000 ALTER TABLE `admin_module_adminmodule` DISABLE KEYS */;
-INSERT INTO `admin_module_adminmodule` VALUES (1,'T01','UMA','uma@gmail.com','123456889'),(2,'T02','MUKESH','mukesh@gmail.com','987654321'),(3,'T03','KAAVIYA','kaaviya@gmail.com','998877667'),(6,'ADM001','ANIKA','ANIKA@gmail.com','9876543210'),(7,'ADM001','Uma','uma@gmail.com','9876543210'),(8,'T01','UMA','umaumikaa@gmail.com','987654321'),(9,'T01','Anika','umaumikaa@gmail.com','987654321');
+INSERT INTO `admin_module_adminmodule` VALUES (1,'T01','UMA','uma@gmail.com','123456889','General','General','Active'),(2,'T02','MUKESH','mukesh@gmail.com','987654321','General','General','Active'),(3,'T03','KAAVIYA','kaaviya@gmail.com','998877667','General','General','Active'),(6,'ADM001','ANIKA','ANIKA@gmail.com','9876543210','General','General','Active'),(7,'ADM001','Uma','uma@gmail.com','9876543210','General','General','Active'),(8,'T01','UMA','umaumikaa@gmail.com','987654321','General','General','Active'),(9,'T01','Anika','umaumikaa@gmail.com','987654321','General','General','Active');
 /*!40000 ALTER TABLE `admin_module_adminmodule` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-25 10:40:35
+-- Dump completed on 2026-06-29 19:16:45
