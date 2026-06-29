@@ -24,15 +24,16 @@ DROP TABLE IF EXISTS `patient_patient`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `patient_patient` (
   `id` bigint NOT NULL AUTO_INCREMENT,
-  `patient_id` varchar(20) NOT NULL,
   `patient_name` varchar(100) NOT NULL,
-  `age` int NOT NULL,
-  `gender` varchar(10) NOT NULL,
+  `age` int DEFAULT NULL,
+  `gender` varchar(10) DEFAULT NULL,
   `blood_group` varchar(10) NOT NULL,
   `phone` varchar(15) NOT NULL,
   `created_at` datetime(6) NOT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `hospital` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +42,7 @@ CREATE TABLE `patient_patient` (
 
 LOCK TABLES `patient_patient` WRITE;
 /*!40000 ALTER TABLE `patient_patient` DISABLE KEYS */;
-INSERT INTO `patient_patient` VALUES (2,'101','John',24,'Male','A+','1234567891','2026-06-29 11:42:28.020361'),(4,'102','Joe',19,'Male','O+','1234567891','2026-06-29 11:42:28.020361'),(5,'102','Ram',40,'Male','B+','1234567891','2026-06-29 11:44:48.821581'),(10,'105','jack',29,'Male','A+','1234567891','2026-06-29 11:48:41.479124');
+INSERT INTO `patient_patient` VALUES (2,'John',24,'Male','A+','1234567891','2026-06-29 11:42:28.020361',NULL,NULL),(4,'Joe',19,'Male','O+','1234567891','2026-06-29 11:42:28.020361',NULL,NULL),(5,'Ram',40,'Male','B+','1234567891','2026-06-29 11:44:48.821581',NULL,NULL),(10,'jack',29,'Male','A+','1234567891','2026-06-29 11:48:41.479124',NULL,NULL),(11,'ravi',NULL,'','AB+','','2026-06-29 17:51:02.605608','Chennai',''),(12,'ravi',NULL,'','AB+','','2026-06-29 17:59:13.325472','Chennai',''),(13,'Shiv',NULL,'','B+','','2026-06-29 18:16:53.863136','chennai',''),(14,'ravi',NULL,'','AB+','','2026-06-29 18:25:41.226372','Chennai','');
 /*!40000 ALTER TABLE `patient_patient` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-29 19:16:45
+-- Dump completed on 2026-06-30  0:05:14

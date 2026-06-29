@@ -31,7 +31,7 @@ CREATE TABLE `blood_request_bloodrequest` (
   `status` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
   CONSTRAINT `blood_request_bloodrequest_units_required_5dfcd46f_check` CHECK ((`units_required` >= 0))
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `blood_request_bloodrequest` (
 
 LOCK TABLES `blood_request_bloodrequest` WRITE;
 /*!40000 ALTER TABLE `blood_request_bloodrequest` DISABLE KEYS */;
-INSERT INTO `blood_request_bloodrequest` VALUES (1,'Ram','O+ve ',4,'Kanchipuram','Rejected'),(2,'Joe','A+ve',3,'chennai','Approved'),(3,'John','B+ve',5,'Chennai','Rejected'),(5,'Ram','O+ve ',2,'Kanchipuram','Pending'),(6,'Ram','B+',1,'Unknown','Pending'),(7,'jack','A+',1,'Unknown','Pending');
+INSERT INTO `blood_request_bloodrequest` VALUES (1,'Ram','O+ve ',4,'Kanchipuram','Rejected'),(2,'Joe','A+ve',3,'chennai','Approved'),(3,'John','B+ve',5,'Chennai','Rejected'),(5,'Ram','O+ve ',2,'Kanchipuram','Pending'),(6,'Ram','B+',1,'Unknown','Pending'),(7,'jack','A+',1,'Unknown','Pending'),(8,'ravi','AB+',6,'Chennai','Approved'),(9,'ravi','AB+',6,'Chennai','Approved'),(10,'Shiv','B+',7,'chennai','Pending'),(11,'ravi','AB+',6,'Chennai','Approved');
 /*!40000 ALTER TABLE `blood_request_bloodrequest` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2026-06-29 19:16:45
+-- Dump completed on 2026-06-30  0:05:13
