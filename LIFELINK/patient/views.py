@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 from blood_request.models import BloodRequest
 from .models import Patient
+from rest_framework import viewsets
+from .models import Patient
+from .serializers import PatientSerializer
 
 def home(request):
     patients = Patient.objects.all()
@@ -59,3 +62,7 @@ def delete(request, id):
         return redirect('home')
 
     return render(request, 'delete_patient.html', {'patient': patient})
+
+class PatientViewSet(viewsets.ModelViewSet):
+    queryset = Patient.objects.all().order_by("-id")
+    serializer_class = PatientSerializer

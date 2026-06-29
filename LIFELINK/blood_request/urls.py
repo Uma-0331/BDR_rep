@@ -1,5 +1,10 @@
 from django.urls import path
 from . import views
+from rest_framework.routers import DefaultRouter
+from .views import BloodRequestViewSet
+
+router = DefaultRouter()
+router.register("api/requests", BloodRequestViewSet)
 
 urlpatterns = [
     path("requestblood/", views.request_blood, name="request_blood"),
@@ -7,3 +12,4 @@ urlpatterns = [
      path("approve/<int:id>/", views.approve_request, name="approve_request"),
     path("reject/<int:id>/", views.reject_request, name="reject_request"),
 ]
+urlpatterns += router.urls

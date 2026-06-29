@@ -16,7 +16,9 @@ function Navbar() {
         <Link to="/donor-register">Become Donor</Link>
         <Link to="/request-blood">Need Blood</Link>
         <Link to="/donors">Donors</Link>
+         <Link to="/patients">Patients</Link>
         <Link to="/contact">Contact</Link>
+        
       </div>
 
 

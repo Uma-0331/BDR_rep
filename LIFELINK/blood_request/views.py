@@ -3,6 +3,9 @@ from .models import BloodRequest
 from donor.models import Donor
 from .utils import find_matching_donors
 from .utils import clean_blood_group
+from rest_framework import viewsets
+from .serializers import BloodRequestSerializer
+from patient.models import Patient
 
 # blood_request/views.py
 
@@ -50,3 +53,20 @@ def reject_request(request, id):
     req.status = "Rejected"
     req.save()
     return redirect("match_dashboard")
+class BloodRequestViewSet(viewsets.ModelViewSet):
+    queryset = BloodRequest.objects.all()
+    serializer_class = BloodRequestSerializer
+
+    def perform_create(self, serializer):
+        blood_request = serializer.save()
+
+        # Create a Patient record automatically
+        Patient.objects.create(
+            patient_name=blood_request.patient_name,
+            blood_group=blood_request.blood_group,
+            phone="",                 # Request form doesn't collect phone for Patient yet
+            hospital="",              # Will be blank
+            city=blood_request.city,
+            age=None,
+            gender=""
+        )

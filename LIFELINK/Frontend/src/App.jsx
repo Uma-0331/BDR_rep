@@ -10,7 +10,7 @@ import PatientRegister from "./pages/PatientRegister";
 import RequestBlood from "./pages/RequestBlood";
 import AvailableDonors from "./pages/AvailableDonors";
 import Contact from "./pages/Contact";
-
+import Patients from "./pages/Patients";
 function App() {
   return (
     <>
@@ -24,6 +24,7 @@ function App() {
         <Route path="/request-blood" element={<RequestBlood />} />
         <Route path="/donors" element={<AvailableDonors />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/patients" element={<Patients />} />
       </Routes>
 
       <Footer />

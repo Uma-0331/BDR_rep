@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../styles/RequestBlood.css";
+import api from "../services/api";
 
 function RequestBlood() {
   const [formData, setFormData] = useState({
@@ -21,11 +22,45 @@ function RequestBlood() {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const requestData = {
+      patient_name: formData.patientName,
+      blood_group: formData.bloodGroup,
+      units_required: Number(formData.units),
+      city: formData.city,
+    };
+
+    await api.post("api/requests/", requestData);
+
     alert("Blood Request Submitted Successfully!");
-  };
+
+    setFormData({
+      patientName: "",
+      bloodGroup: "",
+      units: "",
+      hospital: "",
+      city: "",
+      phone: "",
+      date: "",
+      urgency: "",
+      description: "",
+    });
+
+  } catch (error) {
+    console.log(error);
+    if (error.response) {
+      console.log("Status:", error.response.status);
+      console.log("Response:", error.response.data);
+    }
+    else {
+      console.log(error.message);
+    }
+    alert("Failed to submit request");
+  }
+};
 
   return (
     <div className="request-container">
