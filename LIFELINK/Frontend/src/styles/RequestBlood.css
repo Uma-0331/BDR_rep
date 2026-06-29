@@ -1,0 +1,60 @@
+.request-container {
+  max-width: 650px;
+  margin: 60px auto;
+  padding: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.request-container h2 {
+  text-align: center;
+  color: #d62828;
+}
+
+.sub {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.request-form textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+  border-color: #d62828;
+}
+
+.request-form button {
+  margin-top: 10px;
+  padding: 12px;
+  background: #d62828;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.request-form button:hover {
+  background: #b71c1c;
+}

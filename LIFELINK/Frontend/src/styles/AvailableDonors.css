@@ -1,0 +1,80 @@
+.donor-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.donor-page h2 {
+  color: #d62828;
+  font-size: 32px;
+}
+
+/* FILTER */
+.filter {
+  margin: 20px 0;
+}
+
+.filter select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* GRID */
+.donor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD */
+.donor-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.donor-card:hover {
+  transform: translateY(-8px);
+}
+
+.donor-card h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.donor-card p {
+  margin: 5px 0;
+  color: #555;
+}
+
+/* BUTTON */
+.donor-card button {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #d62828;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.donor-card button:hover {
+  background: #b71c1c;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .donor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .donor-grid {
+    grid-template-columns: 1fr;
+  }
+}

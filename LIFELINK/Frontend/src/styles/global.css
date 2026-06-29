@@ -42,3 +42,34 @@
 .nav-btn:hover{
     background:#B91C1C;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+}
+
+/* GLOBAL BUTTON STYLE (optional) */
+.btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  background: #d62828;
+  color: white;
+}
+
+/* OUTLINE BUTTON */
+.btn-outline {
+  border: 2px solid #d62828;
+  color: #d62828;
+}

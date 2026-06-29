@@ -6,9 +6,9 @@ function Navbar() {
   return (
     <nav className="navbar">
 
-      <div className="logo">
-        🩸 LifeLink
-      </div>
+      <Link to="/" className="logo">
+        ❤️ LifeLink
+      </Link>
 
       <div className="nav-links">
         <Link to="/">Home</Link>
@@ -19,6 +19,10 @@ function Navbar() {
         <Link to="/contact">Contact</Link>
       </div>
 
+
+      <Link to="/donor-register" className="donor-btn">
+        Become Donor
+      </Link>
       
     </nav>
   );
